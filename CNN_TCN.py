@@ -57,7 +57,7 @@ class tactile_CNN(nn.Module):
 			feature_dic["timestep_"+str(timestep)] = self.CNN_blocks(ID5_timestep = ID5_timeseries[:,timestep,:,:,:], ID4_timestep = ID4_timeseries[:, timestep,:,:,:]) 
 			feature_list.append(feature_dic["timestep_"+str(timestep)])
 			timestep += 1 
-		TCN_input_tactile = torch.cat((feature_list[0], feature_list[0]),axis=1)
+		TCN_input_tactile = torch.cat((feature_list[0], feature_list[1]),axis=1)
 		return TCN_input_tactile			
 
 
